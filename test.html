@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MBTI 입력하고 동아리 추천받기</title>
+<style>
+  body {
+    text-align: center;
+    align-items: center;
+    font-size: 12px;
+  }
+  
+  #middle {
+    text-align: center;
+    width: 400px;
+    border: 2px solid #35cc80;
+    border-radius: 8px;
+    margin: 0 auto;
+  }
+  
+  input:valid {
+    border: 1px solid black;
+  }  
+  
+  input:invalid {
+    border: 1px dashed #35cc80;
+  }
+  input:invalid:required {
+    background: #35cc8033;
+  }
+  
+  fieldset {
+    width: 100%;
+    border: none;
+  }
+  
+  #button {
+    padding: 4px 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px;
+    color: white;
+    font-size: 12px;
+    background: #35cc80;    
+  }
+  
+</style>
+</head>
+<body>
+<br><br><br>
+<div id="middle">
+<form action="showResult.do" name="mbtiresult" method="post">
+  <fieldset>
+  
+  <h2>MBTI 입력</h2>
+  <p>맞춤 동아리 추천을 위해<br>MBTI를 입력해 주세요!</p><br>
+
+  <label for="mbti">MBTI:<strong style="color:red;">*</strong></label><br>
+  <input type="text" name="mbti" id="mbti" placeholder="ex. INFJ" pattern="^[A-Z]{4}$"required><br><br>
+    
+  <small>
+  <label>특정 분과만 추천받기</label><br>  
+  <input type="radio" name="branch" id="branch1" value="1">
+  <label for="branch1">공연</label>
+  <input type="radio" name="branch" id="branch2" value="2">
+  <label for="branch2">봉사</label>
+  <input type="radio" name="branch" id="branch3" value="3">
+  <label for="branch3">운동</label>
+  <input type="radio" name="branch" id="branch4" value="4">
+  <label for="branch4">취미교양</label>
+  <input type="radio" name="branch" id="branch5" value="5">
+  <label for="branch5">학술</label>
+  <br><br><input type="radio" name="branch" id="branch6" value="6">
+  <label for="branch6">전체 동아리 중에서 추천</label><br>
+  </small>
+
+  </fieldset><br>
+
+   
+  
+    <input type="submit" id="button" value="입력" onclick="return checkInput()"> &nbsp;&nbsp;
+    <input type="reset" id="button" value="지우기"><br><br>
+  
+</form>
+</div>
+</body>
+</html>
